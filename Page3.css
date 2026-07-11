@@ -1,0 +1,339 @@
+/*=============================
+        PAGE 3
+=============================*/
+
+/* Hide Elements */
+
+.hidden{
+
+    display:none !important;
+
+}
+
+/*=============================
+      PAGE BACKGROUND
+=============================*/
+
+.terminal-page{
+
+    margin:0;
+
+    padding:0;
+
+    width:100%;
+
+    height:100vh;
+
+    background:url("background3.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    overflow:hidden;
+
+    font-family:'Share Tech Mono', monospace;
+
+}
+
+/*=============================
+      MUSIC INTRO
+=============================*/
+
+#introScreen{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.55);
+
+    z-index:9999;
+
+}
+
+.music-player{
+
+    width:340px;
+
+    padding:40px;
+
+    text-align:center;
+
+    background:rgba(0,0,0,.75);
+
+    backdrop-filter:blur(15px);
+
+    border:2px solid #69D7B0;
+
+    border-radius:25px;
+
+    box-shadow:0 0 30px rgba(105,215,176,.45);
+
+}
+
+.nowPlaying{
+
+    color:#B8FFE2;
+
+    font-size:13px;
+
+    letter-spacing:4px;
+
+    margin-bottom:20px;
+
+}
+
+.music-player h2{
+
+    color:#FFFFFF;
+
+    font-size:36px;
+
+    margin-bottom:12px;
+
+}
+
+.music-player h3{
+
+    color:#69D7B0;
+
+    font-size:22px;
+
+    font-weight:400;
+
+    margin-bottom:35px;
+
+}
+
+#playButton{
+
+    padding:15px 50px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#69D7B0;
+
+    color:#003d31;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#playButton:hover{
+
+    transform:scale(1.08);
+
+    background:#A8F5D4;
+
+}
+
+/*=============================
+      TERMINAL
+=============================*/
+
+.terminal-overlay{
+
+    width:100%;
+
+    height:100vh;
+
+    background:rgba(0,0,0,.70);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.terminal{
+
+    width:750px;
+
+    padding:45px;
+
+    background:rgba(0,0,0,.55);
+
+    backdrop-filter:blur(12px);
+
+    border:2px solid #69D7B0;
+
+    border-radius:20px;
+
+    box-shadow:0 0 40px rgba(105,215,176,.8);
+
+    color:#B8FFE2;
+
+    text-align:center;
+
+}
+
+.terminal h1{
+
+    font-size:40px;
+
+    margin-bottom:10px;
+
+    text-shadow:0 0 15px #69D7B0;
+
+}
+
+.terminal h2{
+
+    color:#ff9c9c;
+
+    margin-bottom:25px;
+
+}
+
+.intro{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+}
+
+.hint{
+
+    text-align:left;
+
+    margin-bottom:30px;
+
+    line-height:2;
+
+}
+
+#password{
+
+    width:100%;
+
+    padding:18px;
+
+    background:#111;
+
+    color:#69D7B0;
+
+    border:2px solid #69D7B0;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:22px;
+
+    text-align:center;
+
+    letter-spacing:6px;
+
+    margin-bottom:25px;
+
+}
+
+#password::placeholder{
+
+    color:#6ab89a;
+
+}
+
+.terminal button{
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#69D7B0;
+
+    color:#003d31;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.terminal button:hover{
+
+    transform:scale(1.05);
+
+    background:#A8F5D4;
+
+}
+
+#message{
+
+    margin-top:30px;
+
+    font-size:22px;
+
+    min-height:60px;
+
+}
+
+#loading{
+
+    display:none;
+
+    margin-top:35px;
+
+}
+
+.progress{
+
+    width:100%;
+
+    height:20px;
+
+    background:#222;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    margin-top:15px;
+
+}
+
+#bar{
+
+    width:0;
+
+    height:100%;
+
+    background:#69D7B0;
+
+    transition:width .03s linear;
+
+}

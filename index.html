@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>STAY Authentication</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="page3.css">
+
+</head>
+
+<body class="terminal-page">
+
+    <!-- Background Music -->
+    <audio id="bgMusic">
+        <source src="song3.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Intro Music Player -->
+    <div id="introScreen">
+
+        <div class="music-player">
+
+            <p class="nowPlaying">NOW PLAYING</p>
+
+            <h2>Divine</h2>
+
+            <h3>Stray Kids</h3>
+
+            <button id="playButton" onclick="startExperience()">
+                ▶ PLAY
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Terminal -->
+    <div class="terminal-overlay hidden" id="terminalContent">
+
+        <div class="terminal">
+
+            <h1>STRAY KIDS DATABASE</h1>
+
+            <h2>ACCESS LEVEL : DENIED</h2>
+
+            <p class="intro">
+                Authentication Required.<br>
+                Only a true STAY can continue.
+            </p>
+
+            <div class="hint">
+                <p>🔒 The authentication code contains <strong>8 letters</strong>.</p>
+                <p>💚 Every letter belongs to someone special.</p>
+                <p>⭐ The oldest member comes first.</p>
+            </div>
+
+            <input
+                type="text"
+                id="password"
+                maxlength="8"
+                placeholder="AUTHENTICATION CODE">
+
+            <button onclick="checkPassword()">
+                VERIFY
+            </button>
+
+            <p id="message"></p>
+
+            <div id="loading">
+
+                <p id="loadingText">Connecting to JYPE Servers...</p>
+
+                <div class="progress">
+                    <div id="bar"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<script>
+
+function startExperience() {
+
+    const music = document.getElementById("bgMusic");
+
+    music.play();
+
+    document.getElementById("introScreen").style.display = "none";
+
+    document.getElementById("terminalContent").classList.remove("hidden");
+
+}
+
+function checkPassword() {
+
+    const answer = document.getElementById("password").value.toUpperCase();
+
+    const message = document.getElementById("message");
+
+    if (answer === "BLCHHFSI") {
+
+        message.innerHTML = "✔ ACCESS GRANTED";
+
+        message.style.color = "#8BFFD1";
+
+        document.getElementById("loading").style.display = "block";
+
+        const bar = document.getElementById("bar");
+
+        const loadingText = document.getElementById("loadingText");
+
+        let width = 0;
+
+        const interval = setInterval(function () {
+
+            width++;
+
+            bar.style.width = width + "%";
+
+            if (width === 25) {
+
+                loadingText.innerHTML = "Connecting to JYPE Servers...";
+
+            }
+
+            if (width === 50) {
+
+                loadingText.innerHTML = "Scanning STAY Membership...";
+
+            }
+
+            if (width === 75) {
+
+                loadingText.innerHTML = "Verifying Authentication...";
+
+            }
+
+            if (width === 100) {
+
+                loadingText.innerHTML = "Access Granted ✔";
+
+                clearInterval(interval);
+
+                setTimeout(function () {
+
+                    window.location.href = "page4.html";
+
+                }, 1500);
+
+            }
+
+        }, 30);
+
+    }
+
+    else {
+
+        message.innerHTML =
+        "❌ ACCESS DENIED<br><br>Hint: Use the first letter of each member's stage name in debut order.";
+
+        message.style.color = "#ff8f8f";
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>

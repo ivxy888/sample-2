@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Thing </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="page5.css">
+
+</head>
+
+<body class="letter-page">
+
+    <!-- Background Music -->
+    <audio id="bgMusic">
+        <source src="song5.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Intro Music Player -->
+    <div id="introScreen">
+
+        <div class="music-player">
+
+            <p class="nowPlaying">NOW PLAYING</p>
+
+            <h2>Youtiful</h2>
+
+            <h3>Stray Kids</h3>
+
+            <button id="playButton" onclick="startExperience()">
+                ▶ PLAY
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Main Content -->
+    <div class="letter-overlay hidden" id="mainContent">
+
+        <!-- Left Photo -->
+        <div class="picture left">
+            <img src="leftphoto.jpg" alt="Left Photo">
+        </div>
+
+        <!-- Centre -->
+        <div class="center">
+
+            <img
+                src="envelope.png"
+                id="envelope"
+                alt="Envelope"
+                onclick="openLetter()">
+
+            <p class="clickText">
+                Click the envelope to open your letter 
+            </p>
+
+        </div>
+
+        <!-- Right Photo -->
+        <div class="picture right">
+            <img src="rightphoto.jpg" alt="Right Photo">
+        </div>
+
+    </div>
+
+       <!-- Letter Popup -->
+
+    <div id="letterPopup">
+
+        <div class="popup-content">
+
+            <span
+                class="close"
+                onclick="closeLetter()">
+
+                &times;
+
+            </span>
+
+            <img
+                src="letter.png"
+                alt="Birthday Letter">
+
+        </div>
+
+    </div>
+
+<script>
+
+function startExperience(){
+
+    const music =
+    document.getElementById("bgMusic");
+
+    music.play();
+
+    document.getElementById("introScreen").style.display="none";
+
+    document.getElementById("mainContent").classList.remove("hidden");
+
+}
+
+function openLetter(){
+
+    document.getElementById("letterPopup").style.display="flex";
+
+    const arrow =
+    document.getElementById("nextArrow");
+
+    arrow.style.opacity="1";
+
+    arrow.style.pointerEvents="auto";
+
+}
+
+function closeLetter(){
+
+    document.getElementById("letterPopup").style.display="none";
+
+}
+
+</script>
+
+</body>
+
+</html>

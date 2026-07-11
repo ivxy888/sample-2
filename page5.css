@@ -1,0 +1,485 @@
+/*==========================
+        PAGE 5
+==========================*/
+
+.letter-page{
+
+    margin:0;
+    width:100%;
+    height:100vh;
+
+    background:url("background5.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    overflow:hidden;
+
+    font-family:'Poppins', sans-serif;
+}
+
+/*==========================
+      INTRO SCREEN
+==========================*/
+
+#introScreen{
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,.45);
+
+}
+
+.music-player{
+
+    width:340px;
+
+    padding:35px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+
+    box-shadow:0 0 30px rgba(0,0,0,.4);
+
+}
+
+.nowPlaying{
+
+    color:white;
+    letter-spacing:3px;
+    font-size:13px;
+
+}
+
+.music-player h2{
+
+    color:white;
+    font-size:38px;
+    margin:10px 0;
+
+}
+
+.music-player h3{
+
+    color:#A8F5D4;
+    font-weight:400;
+    margin-bottom:30px;
+
+}
+
+#playButton{
+
+    padding:16px 55px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#A8F5D4;
+
+    color:#00695C;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#playButton:hover{
+
+    transform:scale(1.08);
+
+}
+
+/*==========================
+      MAIN PAGE
+==========================*/
+
+.hidden{
+
+    display:none;
+
+}
+
+.letter-overlay{
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+
+    justify-content:space-evenly;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.35);
+
+    padding:0 60px;
+
+}
+
+/* Pictures */
+
+.picture{
+
+    opacity:0;
+
+}
+
+.left{
+
+    animation:slideLeft 1.5s forwards;
+
+}
+
+.right{
+
+    animation:slideRight 1.5s forwards;
+
+}
+
+.picture img{
+
+    width:420px;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.4);
+
+}
+
+/* Centre */
+
+.center{
+
+    text-align:center;
+
+}
+
+/* Envelope */
+
+#envelope{
+
+    width:220px;
+
+    opacity:0;
+
+    cursor:pointer;
+
+    animation:
+        fadeEnvelope 2s forwards,
+        float 3s ease-in-out infinite;
+
+    animation-delay:
+        1.5s,
+        3.5s;
+
+    transition:.3s;
+
+}
+
+#envelope:hover{
+
+    transform:scale(1.08);
+
+}
+
+.clickText{
+
+    color:white;
+
+    margin-top:20px;
+
+    font-size:18px;
+
+    opacity:0;
+
+    animation:fadeEnvelope 2s forwards;
+
+    animation-delay:1.8s;
+
+}
+
+/*==========================
+      LETTER POPUP
+==========================*/
+
+#letterPopup{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.85);
+
+}
+
+.popup-content{
+
+    position:relative;
+
+}
+
+/* Letter */
+
+.popup-content img{
+
+    width:650px;
+
+    max-width:90%;
+
+    border-radius:15px;
+
+    box-shadow:0 0 40px rgba(255,255,255,.2);
+
+    transform:translateY(300px) scale(.5);
+
+    opacity:0;
+
+    animation:pullLetter 1.5s ease forwards;
+
+}
+
+.close{
+
+    position:absolute;
+
+    top:-20px;
+    right:-20px;
+
+    width:40px;
+    height:40px;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:black;
+
+    text-align:center;
+
+    line-height:40px;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+}
+
+/*==========================
+      ANIMATIONS
+==========================*/
+
+@keyframes slideLeft{
+
+    from{
+
+        transform:translateX(350px);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateX(0);
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes slideRight{
+
+    from{
+
+        transform:translateX(-350px);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateX(0);
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes fadeEnvelope{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes pullLetter{
+
+    0%{
+
+        transform:translateY(350px) scale(.45);
+
+        opacity:0;
+
+    }
+
+    30%{
+
+        transform:translateY(180px) scale(.6);
+
+        opacity:1;
+
+    }
+
+    60%{
+
+        transform:translateY(40px) scale(.8);
+
+    }
+
+    100%{
+
+        transform:translateY(0) scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+/*==========================
+      NEXT PAGE ARROW
+==========================*/
+
+#nextArrow{
+
+    position:fixed;
+
+    bottom:35px;
+
+    right:35px;
+
+    width:75px;
+
+    height:75px;
+
+    border-radius:50%;
+
+    background:#A8F5D4;
+
+    color:#00695C;
+
+    text-decoration:none;
+
+    font-size:42px;
+
+    font-weight:bold;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+
+    transition:.3s;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    animation:bounce 1.5s infinite;
+
+}
+
+#nextArrow:hover{
+
+    transform:scale(1.15);
+
+    background:white;
+
+}
+
+@keyframes bounce{
+
+    0%{
+
+        transform:translateX(0);
+
+    }
+
+    50%{
+
+        transform:translateX(10px);
+
+    }
+
+    100%{
+
+        transform:translateX(0);
+
+    }
+
+}
